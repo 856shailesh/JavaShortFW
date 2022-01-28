@@ -5,16 +5,20 @@ package utils;
 import com.aventstack.extentreports.utils.FileUtil;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.testng.IAnnotationTransformer;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.testng.annotations.ITestAnnotation;
 import test.java.BaseTest;
 
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
 
-public class SuiteListener implements ITestListener {
+public class SuiteListener implements ITestListener, IAnnotationTransformer {
 
     @Override
     public void onTestStart (ITestResult iTestResult){
@@ -56,5 +60,9 @@ public class SuiteListener implements ITestListener {
     }
 
 
+    @Override
+    public void transform(ITestAnnotation iTestAnnotation, Class aClass, Constructor constructor, Method method) {
+        iTestAnnotation.setRetryAnalyzer(RetryAnalyser.class);
+    }
 }
 
