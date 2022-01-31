@@ -13,7 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import utils.Constants;
+import main.java.utils.Constants;
 
 import java.io.File;
 import java.lang.reflect.Method;
