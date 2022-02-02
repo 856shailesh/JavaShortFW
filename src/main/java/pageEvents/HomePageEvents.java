@@ -7,6 +7,6 @@ public class HomePageEvents {
 
     public void clickOnSignInBtn(){
         ElementFetch elementFetch = new ElementFetch();
-        elementFetch.getWebElement("XPath", HomePageElements.signInBtn).click();
+        elementFetch.getWebElement("XPATH", HomePageElements.signInBtn).click();
     }
 }

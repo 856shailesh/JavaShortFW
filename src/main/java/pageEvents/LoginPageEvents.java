@@ -8,7 +8,7 @@ public class LoginPageEvents {
 
     public void verifyLoginPageOpenedOrNot(){
         ElementFetch elementFetch = new ElementFetch();
-        Assert.assertTrue(elementFetch.getListWebElements("Xpath", LoginPageElements.loginText).size()>0, "Login page did not open");
+        Assert.assertTrue(elementFetch.getListWebElements("XPATH", LoginPageElements.loginText).size()>0, "Login page did not open");
     }
 
     public void enterEmailId(){
