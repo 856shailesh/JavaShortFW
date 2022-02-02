@@ -60,6 +60,11 @@ public class BaseTest {
             String logText = "Test Case : " + methodName + "Failed";
             Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);
             logger.log(Status.FAIL,m);
+        } else if (result.getStatus()== ITestResult.SKIP){
+            String methodName = result.getMethod().getMethodName();
+            String logText = "Test Case : " + methodName + "skipped";
+            Markup m = MarkupHelper.createLabel(logText, ExtentColor.YELLOW);
+            logger.log(Status.SKIP,m);
         }
         driver.quit();
     }
